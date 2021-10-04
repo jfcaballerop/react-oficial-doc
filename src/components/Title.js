@@ -12,7 +12,30 @@ function FormattedDate(props) {
     return <h2>Son las {props.date.toLocaleTimeString()}</h2>;
 
 }
+class ButtonGreeting extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            show: false,
+            name: props.name
+        }
+    }
+    greeting() {
+        this.setState({
+            show: !this.state.show
+        })
+    }
+    render() {
+        return (
+            <div>
+                <button onClick={() => this.greeting()}>Saludo</button>
+                <div style={{ display: this.state.show ? 'block' : 'none' }}>Hola {this.props.name}</div>
+            </div>
+        );
 
+    }
+
+}
 class Hora extends React.Component {
     constructor(props) {
         super(props);
@@ -37,8 +60,13 @@ class Hora extends React.Component {
 
 
     render() {
-        return <FormattedDate date={this.state.date} />;
+        return (
+            <div>
+
+                <FormattedDate date={this.state.date} />
+            </div>
+        );
     }
 }
 
-export { Saludo, Hora };
+export { Saludo, Hora, ButtonGreeting };

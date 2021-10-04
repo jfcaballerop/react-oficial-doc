@@ -7,6 +7,8 @@ function App() {
     <div>
       <Title.Saludo name={name} />
       <Title.Hora />
+      <Title.ButtonGreeting name='Pepe' />
+
     </div>
   );
   return element;
