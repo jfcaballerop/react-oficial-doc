@@ -1,11 +1,29 @@
 import React from "react";
 
 function Saludo(props) {
-    if (props)
-        return <h1> Hello {props.name}</h1>
-    else
+    if (props) {
+        const isLoggedIn = props.isLoggedIn;
+        if (isLoggedIn)
+            return (
+                <div>
+                    <h1> Hello {props.name}</h1>
+                    <UserGreeting />
+                </div>
+            );
+        else
+            return <Greeting />
+
+    } else
         return <h1> Hello Stranger!</h1>
 
+}
+
+function UserGreeting(props) {
+    return <h1>Wellcome Back!</h1>;
+}
+
+function Greeting(props) {
+    return <h1>Please sign up.</h1>;
 }
 
 function FormattedDate(props) {
