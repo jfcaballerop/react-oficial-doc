@@ -1,5 +1,6 @@
 import './App.css';
 import { LoginControl, Page } from './components/Body';
+import Numbers from './components/Numbers.jsx';
 import * as Title from './components/Title';
 
 function App() {
@@ -12,6 +13,9 @@ function App() {
       <Title.ButtonGreeting name='Pepe' />
       <hr />
       <LoginControl />
+      <hr />
+
+      <Numbers />
 
     </div>
   );
